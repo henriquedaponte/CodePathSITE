@@ -30,8 +30,7 @@ const freqMap = {
   3: 329.628, // Red
   4: 261.626, // Yellow
   5: 523.25, // Purple
-  6: 164.81, // Brown
-  7: 277.18 // Game Lost Sound
+  6: 164.81 // Brown
 }
 
 function startGame(){
@@ -39,7 +38,7 @@ function startGame(){
   progress = 0;
   mistakes = 0;
   gamePlaying = true;
-  clueHoldTime = 420; // Reset speed before new game
+  clueHoldTime = 420; // Reset speed before new game (based on real game)
   pattern = generatePattern(); // Start each game with a new sequence
   
   // Swap the Start and Stop Buttons
@@ -107,11 +106,11 @@ function playClueSequence(){
     
     // Make speed increasingly faster
     // This is the same increase in speed that the real games has
-    if(i == 3){
+    if(progress == 4){
       clueHoldTime = 320; 
     }
     
-    if(i == 7){
+    if(progress == 8){
       clueHoldTime = 220; 
     }
   }
